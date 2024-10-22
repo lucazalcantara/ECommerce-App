@@ -19,10 +19,10 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $currentTab) {
-            Text("Home View")
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background()
-                .tag(Tab.Home)
+            
+            HomePageView()
+                .environmentObject(cartManager)
+            
             Text("Search View")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background()
@@ -69,7 +69,7 @@ struct ContentView: View {
                         .resizable()
                         .foregroundColor(Color("kPrimary"))
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 25, height: 25)
+                        .frame(width: 22, height: 22)
                         .frame(maxWidth: .infinity)
                         .background(
                             ZStack{
@@ -81,15 +81,15 @@ struct ContentView: View {
                                     Text(tab.tabName)
                                         .foregroundColor(.primary)
                                         .font(.footnote)
-                                        .padding(.top, 50)
+                                        .padding(.top, 40)
                                 }
                             }
                         ).contentShape(Rectangle())
-                        .offset(y: currentTab == tab ? -15 : 0)
+                        .offset(y: currentTab == tab ? -10 : 0)
                 }
             })
         }
-        .frame(height:25)
+        .frame(height: 15)
     }
     
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Searchview: View {
+struct SearchView: View {
     @State private var search: String = ""
     var body: some View {
         HStack{
@@ -27,10 +27,11 @@ struct Searchview: View {
                 .background(Color("kPrimary"))
                 .cornerRadius(12)
         }
-            .padding(.horizontal)
+        .padding(.horizontal)
+
     }
 }
 
 #Preview {
-    Searchview()
+    SearchView()
 }
